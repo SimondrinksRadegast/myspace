@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="cs">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>xx_Jolanda_Velka_Vestkyne_2005_xx on MySpace!</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="theme-glitter">
+    <!-- Top Navigation Bar -->
+    <header class="myspace-header">
+        <div class="header-inner">
+            <div class="logo">
+                <span class="logo-my">my</span><span class="logo-space">space.com</span>
+                <span class="logo-sub">| CS Troll Edition 2005</span>
+            </div>
+            <nav class="nav-links">
+                <a href="#home">Home</a> |
+                <a href="#browse">Browse</a> |
+                <a href="#search">Search</a> |
+                <a href="#invite">Invite</a> |
+                <a href="#film">Film</a> |
+                <a href="#mail">Mail</a> |
+                <a href="#blog">Blog</a> |
+                <a href="#forum">Forum</a> |
+                <a href="#groups">Groups</a> |
+                <a href="#events">Events</a> |
+                <a href="#music">Music</a>
+            </nav>
+            <div class="search-box">
+                <input type="text" placeholder="Hledat memy..." id="searchInput">
+                <button onclick="alert('Výsledek hledání: Hodně budeš někde! 🔮')">Hledat</button>
+            </div>
+        </div>
+    </header>
+
+    <!-- Marquee Banner -->
+    <div class="marquee-container">
+        <marquee behavior="scroll" direction="left" scrollamount="6">
+            ✨ HODNĚ BUDEŠ NĚKDE! ✨ Vytáhla jsem cikánský karty! ✨ Jiří Kára zdraví Olšanské hřbitovy! ✨ Zakázat všechny ty intěrněty! ✨ Bába pod kořenem je stále tam! ✨
+        </marquee>
+    </div>
+
+    <!-- Main Container -->
+    <div class="container">
+
+        <!-- Left Column (Profile, Contact, Details) -->
+        <aside class="left-col">
+            <!-- Profile Box -->
+            <div class="profile-box">
+                <h1 class="profile-name">✨xx_Jolanda_Věštkyně_2005_xx✨</h1>
+                <p class="profile-tagline">"Vidím velký špatný, ale i hodně budeš někde!"</p>
+
+                <div class="profile-avatar-wrapper">
+                    <div class="profile-avatar-frame">
+                        <img src="https://api.dicebear.com/7.x/bottts/svg?seed=JolandaTroll2005&backgroundColor=b6e3f4,c0aede,d1d4f9" alt="Jolanda Avatar" class="profile-img" id="profileAvatar">
+                    </div>
+                    <div class="online-now">
+                        <span class="blink">ONLINE NOW!</span>
+                    </div>
+                </div>
+
+                <div class="profile-status">
+                    <p><strong>Nálada:</strong> <span id="currentMood">🔮 Dívám se do budoucna</span></p>
+                    <p><strong>Stav:</strong> <em>"Cikánský karty nelžou, chlapče..."</em></p>
+                    <p><strong>Pohlaví:</strong> Žena / Legendární věštkyně</p>
+                    <p><strong>Věk:</strong> Nekonečný (Byl jednou jeden král...)</p>
+                    <p><strong>Lokalita:</strong> Ústí nad Labem / Věštírna TV Mňam</p>
+                    <p><strong>Poslední přihlášení:</strong> Dnes 04:20:00</p>
+                </div>
+            </div>
+
+            <!-- Theme Switcher Box -->
+            <div class="box theme-box">
+                <div class="box-header">🎨 Změnit Vzhled (Theme)</div>
+                <div class="box-content theme-buttons">
+                    <button class="theme-btn active" onclick="setTheme('glitter')">✨ Glitter 2005</button>
+                    <button class="theme-btn" onclick="setTheme('matrix')">📟 Matrix Troll</button>
+                    <button class="theme-btn" onclick="setTheme('scene')">💀 Scene/Goth</button>
+                    <button class="theme-btn" onclick="setTheme('retro')">🌊 Retro Blue</button>
+                </div>
+            </div>
+
+            <!-- Contact Box -->
+            <div class="box contact-box">
+                <div class="box-header">Kontaktovat Jolandu</div>
+                <div class="box-content contact-links">
+                    <a href="javascript:void(0)" onclick="sendMsg('Zpráva odeslána do vesmíru!')">📩 Poslat Zprávu</a>
+                    <a href="javascript:void(0)" onclick="sendMsg('Byl/a jsi přidán/a do přátel!')">➕ Přidat do Přátel</a>
+                    <a href="javascript:void(0)" onclick="sendMsg('Přidáno do oblíbených trollů!')">⭐ Přidat k Oblíbeným</a>
+                    <a href="javascript:void(0)" onclick="sendMsg('Pusinka odeslána! 💋')">💋 Poslat Pusinku</a>
+                    <a href="javascript:void(0)" onclick="giveBeer()">🍺 Poslat Pivo Jiřímu Károvi (<span id="beerCount">104</span>)</a>
+                    <a href="javascript:void(0)" onclick="triggerGlitter()">✨ Poslat Glitry na zeď</a>
+                </div>
+            </div>
+
+            <!-- Visitor & Beer Counter -->
+            <div class="box stats-box">
+                <div class="box-header">📊 Statistika Profilu</div>
+                <div class="box-content">
+                    <div class="stat-item">
+                        <span>Návštěvník číslo:</span>
+                        <div class="digital-counter" id="visitorCounter">0084920</div>
+                    </div>
+                    <div class="stat-item">
+                        <span>Hodnocení trollovaní:</span>
+                        <div class="rating-stars">⭐⭐⭐⭐⭐ (5/5)</div>
+                    </div>
+                    <div class="stat-item">
+                        <span>Vypitých piv:</span>
+                        <strong id="beerCountStat">104 🍺</strong>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interests Box -->
+            <div class="box interests-box">
+                <div class="box-header">Jolanda - Zájmy & Znalosti</div>
+                <div class="box-content">
+                    <table class="interests-table">
+                        <tr>
+                            <td class="label">Obecně:</td>
+                            <td>Vykládání cikánských karet, vyštování z kávové sedliny, rozbíjení intěrnětu, svatba na Olšanských hřbitovech.</td>
+                        </tr>
+                        <tr>
+                            <td class="label">Hudba:</td>
+                            <td>Ivan Mládek, Daniel Landa, Disco 80s, Nightcore remixes, Techno Jolanda Remix 2005.</td>
+                        </tr>
+                        <tr>
+                            <td class="label">Filmy:</td>
+                            <td>Svatba Jiřího Káry (2000), Bába pod kořenem (Dokument), Slunce seno erotika, Matrix.</td>
+                        </tr>
+                        <tr>
+                            <td class="label">Hlášky:</td>
+                            <td>"Hodně budeš někde!", "Deset tisíc mých očí!", "A tady vidím velký špatný...", "Já jsem tady za hvězdu!", "Ty intěrněty bych zakázala!"</td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Right Column (Music Player, Fortune Teller, Soundboard, Bio, Friends, Comments) -->
+        <main class="right-col">
+
+            <!-- Music Player Widget -->
+            <div class="box music-player-box" id="music">
+                <div class="box-header">🎵 MySpace Music Player v2.1 (Web Audio Synthesizer)</div>
+                <div class="box-content player-content">
+                    <div class="player-info">
+                        <div class="track-title" id="trackTitle">▶ Jolanda - Velký Špatný (Remix 2005)</div>
+                        <div class="equalizer-bars" id="equalizer">
+                            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                            <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+                        </div>
+                    </div>
+
+                    <div class="player-controls">
+                        <button class="player-btn" onclick="togglePlay()" id="playBtn">▶ PLAY</button>
+                        <button class="player-btn" onclick="stopMusic()">⏹ STOP</button>
+                        <button class="player-btn" onclick="nextTrack()">⏭ NEXT TRACK</button>
+                        <select id="trackSelect" onchange="changeTrack(this.value)">
+                            <option value="0">Jolanda - Velký Špatný (Retro Beat)</option>
+                            <option value="1">Jiří Kára - Olšanský Svatbostyl</option>
+                            <option value="2">Věra Pohlová - Ty Intěrněty (Chiptune)</option>
+                            <option value="3">Bába Pod Kořenem - Dark Ambient 2005</option>
+                        </select>
+                    </div>
+                    <div class="volume-container">
+                        <label for="volumeSlider">Hlasitost: </label>
+                        <input type="range" id="volumeSlider" min="0" max="1" step="0.05" value="0.3" oninput="setVolume(this.value)">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive Crystal Ball / Prophecy Generator -->
+            <div class="box fortune-box">
+                <div class="box-header">🔮 Jolandin Křišťálový Glóbus - Vyvešti si budoucnost!</div>
+                <div class="box-content fortune-content">
+                    <p>Polož Jolandě otázku a stiskni kouzelnou kouli!</p>
+                    <div class="fortune-input-group">
+                        <input type="text" id="fortuneQuestion" placeholder="Napiš svou otázku (např. Budu mít zítra pivo?)" value="Mám si dneska dát pivo?">
+                        <button onclick="readCards()" class="magic-btn">🔮 Vyložit karty!</button>
+                    </div>
+
+                    <div class="crystal-ball-display" id="crystalBall">
+                        <div class="ball-sphere" id="ballSphere">
+                            <span id="ballText">Klikni pro věštbu...</span>
+                        </div>
+                    </div>
+                    <div class="fortune-result-box" id="fortuneResult">
+                        <em>Ať zmáčkneš cokoliv, Jolanda ti poví pravdu!</em>
+                    </div>
+                </div>
+            </div>
+
+            <!-- CS Meme Soundboard -->
+            <div class="box soundboard-box">
+                <div class="box-header">🔊 CS Meme Soundboard 2005 (Klikni a poslouchej)</div>
+                <div class="box-content soundboard-grid">
+                    <button class="sound-btn" onclick="playSound('vypatlat')">🗣️ Jolanda: "Hodně budeš někde!"</button>
+                    <button class="sound-btn" onclick="playSound('spatny')">⚠️ Jolanda: "Velký špatný!"</button>
+                    <button class="sound-btn" onclick="playSound('kara')">🍻 Jiří Kára: "To je materiál!"</button>
+                    <button class="sound-btn" onclick="playSound('internet')">💻 Věra P.: "Ty intěrněty zakázat!"</button>
+                    <button class="sound-btn" onclick="playSound('koren')">🌲 Bába: "Jsem pod kořenem!"</button>
+                    <button class="sound-btn" onclick="playSound('hvezda')">⭐ Jolanda: "Já jsem hvězda!"</button>
+                </div>
+            </div>
+
+            <!-- About Me Section -->
+            <div class="box bio-box">
+                <div class="box-header">O mně (Jolanda's Space)</div>
+                <div class="box-content">
+                    <p class="highlight-text">Vítám vás na mým oficiálním MySpace profilu z roku 2005! 🎉</p>
+                    <p>
+                        Kdo mě nezná, já jsem <strong>Jolanda</strong>, slavná televizní věštkyně z EZO TV!
+                        Můj život je plný karet, hvězd, energií a občasných rozhovorů s Jiřím Károu a Věrou Pohlovou.
+                    </p>
+                    <p>
+                        Pokud máš problém, napiš mi do komentářů nebo si vyvešti v mém křišťálovém glóbusu výše!
+                        Pamatuj: <em>Některé věci se nedají vrátit, jako třeba když ti uteče pes nebo když tě někdo zamkne v mrazáku!</em>
+                    </p>
+                </div>
+            </div>
+
+            <!-- Top 8 Friends Grid -->
+            <div class="box friends-box">
+                <div class="box-header">Jolanda's Top 8 CS Troll Friends</div>
+                <div class="box-content">
+                    <p class="friends-sub">Jolanda má <strong>13,370</strong> přátel!</p>
+                    <div class="friends-grid">
+                        <div class="friend-card">
+                            <span class="friend-name">Jiří Kára</span>
+                            <img src="https://api.dicebear.com/7.x/bottts/svg?seed=JiriKaraBeer" alt="Jiří Kára" class="friend-img">
+                            <span class="friend-quote">"Pivo a Olšany!"</span>
+                        </div>
+                        <div class="friend-card">
+                            <span class="friend-name">Věra Pohlová</span>
+                            <img src="https://api.dicebear.com/7.x/bottts/svg?seed=VeraPohlova" alt="Věra Pohlová" class="friend-img">
+                            <span class="friend-quote">"Zakázat intěrněty!"</span>
+                        </div>
+                        <div class="friend-card">
+                            <span class="friend-name">Bába Pod Kořenem</span>
+                            <img src="https://api.dicebear.com/7.x/bottts/svg?seed=BabaPodKorenem" alt="Bába Pod Kořenem" class="friend-img">
+                            <span class="friend-quote">"Pomoc, kořen!"</span>
+                        </div>
+                        <div class="friend-card">
+                            <span class="friend-name">Tom (MySpace)</span>
+                            <img src="https://api.dicebear.com/7.x/bottts/svg?seed=TomMyspace" alt="Tom" class="friend-img">
+                            <span class="friend-quote">"Your first friend!"</span>
+                        </div>
+                        <div class="friend-card">
+                            <span class="friend-name">Láďa Hruška</span>
+                            <img src="https://api.dicebear.com/7.x/bottts/svg?seed=LadaHruska" alt="Láďa Hruška" class="friend-img">
+                            <span class="friend-quote">"Kůžičky za 5 Kč!"</span>
+                        </div>
+                        <div class="friend-card">
+                            <span class="friend-name">Zdeněk Pohlreich</span>
+                            <img src="https://api.dicebear.com/7.x/bottts/svg?seed=Pohlreich" alt="Zdeněk Pohlreich" class="friend-img">
+                            <span class="friend-quote">"Ty vole už dost!"</span>
+                        </div>
+                        <div class="friend-card">
+                            <span class="friend-name">Dan Nekonečný</span>
+                            <img src="https://api.dicebear.com/7.x/bottts/svg?seed=DanNekonecny" alt="Dan Nekonečný" class="friend-img">
+                            <span class="friend-quote">"Rrrrrozkoš!"</span>
+                        </div>
+                        <div class="friend-card">
+                            <span class="friend-name">Rytmus 2005</span>
+                            <img src="https://api.dicebear.com/7.x/bottts/svg?seed=Rytmus2005" alt="Rytmus" class="friend-img">
+                            <span class="friend-quote">"Cikánský sen!"</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Comments Section -->
+            <div class="box comments-box">
+                <div class="box-header">Komentáře od Návštěvníků (Napiš věštkyni!)</div>
+                <div class="box-content">
+                    <div class="add-comment-form">
+                        <input type="text" id="commentAuthor" placeholder="Tvoje přezdívka (např. xx_KARA_FAN_xx)" value="xX_Troll_Master_Xx">
+                        <textarea id="commentText" placeholder="Napiš vzkaz pro Jolandu..." rows="3">Ahoj Jolando, vyvěštíš mi jestli udělám zkoušku z matematiky?</textarea>
+                        <button onclick="addComment()" class="submit-comment-btn">💬 Přidat Komentář</button>
+                    </div>
+
+                    <div class="comments-list" id="commentsList">
+                        <!-- Preloaded authentic CS meme troll comments -->
+                        <div class="comment-item">
+                            <div class="comment-avatar">
+                                <img src="https://api.dicebear.com/7.x/bottts/svg?seed=JiriKaraBeer" alt="Jiří Kára">
+                            </div>
+                            <div class="comment-body">
+                                <div class="comment-meta">
+                                    <strong>Jiří_Kára_Official</strong> - 14.11.2005 o 18:32
+                                </div>
+                                <div class="comment-text">
+                                    Nazdar Jolando! Na Olšanech je dneska zima, pošli pivo a nějaký cigára! A ať ten intěrnět moc nebliká!
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="comment-item">
+                            <div class="comment-avatar">
+                                <img src="https://api.dicebear.com/7.x/bottts/svg?seed=VeraPohlova" alt="Věra Pohlová">
+                            </div>
+                            <div class="comment-body">
+                                <div class="comment-meta">
+                                    <strong>Věra_Pohlová_72</strong> - 12.11.2005 o 11:15
+                                </div>
+                                <div class="comment-text">
+                                    Tyhle vaše MySpace stránky bych všechny zakázala! Lidi pak nesedí u televize a nečtou noviny!
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="comment-item">
+                            <div class="comment-avatar">
+                                <img src="https://api.dicebear.com/7.x/bottts/svg?seed=BabaPodKorenem" alt="Bába Pod Kořenem">
+                            </div>
+                            <div class="comment-body">
+                                <div class="comment-meta">
+                                    <strong>Bába_Z_Lesa</strong> - 10.11.2005 o 09:44
+                                </div>
+                                <div class="comment-text">
+                                    Jolando help! Zaklínila jsem se pod kořenem a hasiči stále nejdu! Vyvěšti kdy mě vytáhnou!
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </main>
+    </div>
+
+    <!-- Retro Footer -->
+    <footer class="myspace-footer">
+        <p>© 2005 MySpace.com CS Meme Edition. Všechna práva vyvěštena Jolandou. Powered by Cikánské Karty & Web Audio API.</p>
+        <p><a href="javascript:void(0)" onclick="alert('Ty intěrněty byly úspěšně zakázány!')">Zakázat Intěrněty</a> | <a href="javascript:void(0)" onclick="alert('Hodně budeš někde!')">Podmínky užití</a> | <a href="javascript:void(0)" onclick="alert('EZO TV Hotline: 900 123 456')">Kontakt</a></p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

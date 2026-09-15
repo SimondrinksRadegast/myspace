@@ -1,0 +1,751 @@
+/* 2005 MySpace Aesthetic Stylesheet - CS Meme Troll Edition */
+
+@import url('https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&family=Comic+Neue:wght@400;700&display=swap');
+
+:root {
+    --bg-color: #f3e5f5;
+    --bg-image: radial-gradient(#ff80ab 15%, transparent 16%), radial-gradient(#80deea 15%, transparent 16%);
+    --header-bg: linear-gradient(180deg, #003366 0%, #001a33 100%);
+    --box-border: #ff69b4;
+    --box-header-bg: linear-gradient(180deg, #ff69b4 0%, #ff1493 100%);
+    --box-header-text: #ffffff;
+    --box-bg: #ffffff;
+    --text-color: #333333;
+    --link-color: #d81b60;
+    --font-family: 'Comic Neue', 'Comic Sans MS', 'Trebuchet MS', sans-serif;
+}
+
+/* Theme 1: Glitter 2005 (Default) */
+body.theme-glitter {
+    --bg-color: #ffe4e1;
+    --header-bg: linear-gradient(180deg, #6a1b9a 0%, #4a148c 100%);
+    --box-border: #ff1493;
+    --box-header-bg: linear-gradient(180deg, #ff69b4 0%, #c2185b 100%);
+    --box-header-text: #ffffff;
+    --box-bg: #fff0f5;
+    --text-color: #2c003e;
+    --link-color: #c2185b;
+}
+
+/* Theme 2: Matrix Troll */
+body.theme-matrix {
+    --bg-color: #000000;
+    --header-bg: linear-gradient(180deg, #003300 0%, #001100 100%);
+    --box-border: #00ff00;
+    --box-header-bg: linear-gradient(180deg, #005500 0%, #002200 100%);
+    --box-header-text: #00ff00;
+    --box-bg: #051505;
+    --text-color: #00ff00;
+    --link-color: #66ff66;
+    --font-family: 'Courier Prime', 'Courier New', monospace;
+}
+
+/* Theme 3: Scene / Goth */
+body.theme-scene {
+    --bg-color: #111111;
+    --header-bg: linear-gradient(180deg, #330033 0%, #110011 100%);
+    --box-border: #ff007f;
+    --box-header-bg: linear-gradient(180deg, #880044 0%, #330011 100%);
+    --box-header-text: #00ffff;
+    --box-bg: #1a1a2e;
+    --text-color: #e0e0e0;
+    --link-color: #ff007f;
+}
+
+/* Theme 4: Retro Blue Classic Myspace */
+body.theme-retro {
+    --bg-color: #e6f2ff;
+    --header-bg: linear-gradient(180deg, #003366 0%, #001a33 100%);
+    --box-border: #6699cc;
+    --box-header-bg: linear-gradient(180deg, #6699cc 0%, #003366 100%);
+    --box-header-text: #ffffff;
+    --box-bg: #ffffff;
+    --text-color: #000000;
+    --link-color: #003399;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: var(--bg-color);
+    color: var(--text-color);
+    font-family: var(--font-family);
+    font-size: 13px;
+    line-height: 1.4;
+    padding-bottom: 30px;
+}
+
+a {
+    color: var(--link-color);
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+a:hover {
+    color: #ff0000;
+    text-decoration: none;
+}
+
+/* Myspace Top Navigation */
+.myspace-header {
+    background: var(--header-bg);
+    color: #ffffff;
+    padding: 8px 15px;
+    border-bottom: 2px solid var(--box-border);
+    box-shadow: 0 3px 10px rgba(0,0,0,0.3);
+}
+
+.header-inner {
+    max-width: 980px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.logo-my {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+.logo-space {
+    font-size: 24px;
+    font-weight: bold;
+    color: #ff9900;
+    text-shadow: 1px 1px 2px #000;
+}
+
+.logo-sub {
+    font-size: 11px;
+    color: #cccccc;
+    margin-left: 5px;
+}
+
+.nav-links {
+    font-size: 12px;
+}
+
+.nav-links a {
+    color: #ffffff;
+    text-decoration: none;
+    margin: 0 3px;
+}
+
+.nav-links a:hover {
+    color: #ffcc00;
+    text-decoration: underline;
+}
+
+.search-box input {
+    padding: 3px 6px;
+    font-size: 12px;
+    border: 1px solid #ccc;
+}
+
+.search-box button {
+    padding: 3px 8px;
+    font-size: 12px;
+    background: #ff9900;
+    border: 1px solid #cc7a00;
+    color: #fff;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+/* Marquee Banner */
+.marquee-container {
+    background: #000000;
+    color: #00ff00;
+    padding: 5px 0;
+    font-weight: bold;
+    font-size: 14px;
+    border-bottom: 2px dashed var(--box-border);
+    letter-spacing: 1px;
+}
+
+/* Main Container Layout */
+.container {
+    max-width: 980px;
+    margin: 15px auto;
+    display: flex;
+    gap: 15px;
+    padding: 0 10px;
+}
+
+.left-col {
+    width: 320px;
+    flex-shrink: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.right-col {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+/* Box Styling (Classic MySpace Table/Border style) */
+.box {
+    border: 2px solid var(--box-border);
+    background-color: var(--box-bg);
+    box-shadow: 3px 3px 0px var(--box-border);
+    border-radius: 4px;
+    overflow: hidden;
+}
+
+.box-header {
+    background: var(--box-header-bg);
+    color: var(--box-header-text);
+    padding: 6px 10px;
+    font-weight: bold;
+    font-size: 14px;
+    border-bottom: 1px solid var(--box-border);
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+.box-content {
+    padding: 10px;
+}
+
+/* Profile Box */
+.profile-box {
+    border: 2px solid var(--box-border);
+    background-color: var(--box-bg);
+    padding: 12px;
+    border-radius: 4px;
+    box-shadow: 3px 3px 0px var(--box-border);
+}
+
+.profile-name {
+    font-size: 18px;
+    color: var(--link-color);
+    text-align: center;
+    margin-bottom: 4px;
+    text-shadow: 1px 1px 0px #fff;
+}
+
+.profile-tagline {
+    font-style: italic;
+    font-size: 12px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.profile-avatar-wrapper {
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.profile-avatar-frame {
+    display: inline-block;
+    padding: 5px;
+    background: linear-gradient(135deg, #ff1493, #00ffff, #ffff00);
+    border-radius: 8px;
+    animation: rotateGlow 4s infinite linear;
+}
+
+@keyframes rotateGlow {
+    0% { filter: hue-rotate(0deg); }
+    100% { filter: hue-rotate(360deg); }
+}
+
+.profile-img {
+    width: 170px;
+    height: 170px;
+    border: 2px solid #000;
+    background: #fff;
+    display: block;
+}
+
+.online-now {
+    margin-top: 6px;
+}
+
+.blink {
+    background: #00ff00;
+    color: #000;
+    font-weight: bold;
+    padding: 3px 8px;
+    font-size: 12px;
+    border-radius: 3px;
+    animation: blinkAnim 1s infinite alternate;
+    border: 1px solid #009900;
+}
+
+@keyframes blinkAnim {
+    0% { opacity: 1; }
+    100% { opacity: 0.3; }
+}
+
+.profile-status {
+    font-size: 12px;
+    line-height: 1.6;
+    border-top: 1px dashed var(--box-border);
+    padding-top: 8px;
+}
+
+/* Theme Switcher */
+.theme-buttons {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 6px;
+}
+
+.theme-btn {
+    padding: 6px;
+    font-size: 11px;
+    cursor: pointer;
+    background: #fff;
+    border: 1px solid var(--box-border);
+    font-weight: bold;
+    border-radius: 3px;
+    transition: all 0.2s;
+}
+
+.theme-btn:hover, .theme-btn.active {
+    background: var(--box-header-bg);
+    color: #fff;
+}
+
+/* Contact Links */
+.contact-links {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.contact-links a {
+    display: block;
+    padding: 6px 8px;
+    background: rgba(0,0,0,0.05);
+    border: 1px solid var(--box-border);
+    border-radius: 3px;
+    text-decoration: none;
+    font-size: 12px;
+}
+
+.contact-links a:hover {
+    background: var(--box-header-bg);
+    color: #fff;
+}
+
+/* Visitor / Beer Counter */
+.stat-item {
+    margin-bottom: 8px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.digital-counter {
+    background: #000;
+    color: #00ff00;
+    font-family: 'Courier Prime', monospace;
+    font-size: 16px;
+    font-weight: bold;
+    padding: 2px 6px;
+    border: 1px solid #333;
+    letter-spacing: 2px;
+}
+
+/* Interests Table */
+.interests-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 12px;
+}
+
+.interests-table td {
+    padding: 4px;
+    vertical-align: top;
+    border-bottom: 1px dotted var(--box-border);
+}
+
+.interests-table .label {
+    font-weight: bold;
+    width: 80px;
+    color: var(--link-color);
+}
+
+/* Music Player Widget */
+.player-content {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    background: #111;
+    color: #00ff00;
+    border-radius: 3px;
+    padding: 12px;
+}
+
+.player-info {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #333;
+    padding-bottom: 8px;
+}
+
+.track-title {
+    font-family: 'Courier Prime', monospace;
+    font-weight: bold;
+    color: #ff00ff;
+}
+
+.equalizer-bars {
+    display: flex;
+    align-items: flex-end;
+    gap: 2px;
+    height: 20px;
+}
+
+.equalizer-bars .bar {
+    width: 4px;
+    height: 5px;
+    background: #00ff00;
+}
+
+.equalizer-bars.playing .bar {
+    animation: eqAnim 0.5s infinite alternate ease-in-out;
+}
+
+.equalizer-bars.playing .bar:nth-child(2n) { animation-delay: 0.1s; }
+.equalizer-bars.playing .bar:nth-child(3n) { animation-delay: 0.2s; }
+.equalizer-bars.playing .bar:nth-child(4n) { animation-delay: 0.3s; }
+
+@keyframes eqAnim {
+    0% { height: 3px; background: #00ff00; }
+    100% { height: 18px; background: #ff00ff; }
+}
+
+.player-controls {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    align-items: center;
+}
+
+.player-btn {
+    background: #222;
+    color: #00ff00;
+    border: 1px solid #00ff00;
+    padding: 5px 10px;
+    font-size: 11px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.player-btn:hover {
+    background: #00ff00;
+    color: #000;
+}
+
+.player-controls select {
+    background: #222;
+    color: #fff;
+    border: 1px solid #555;
+    padding: 4px;
+    font-size: 11px;
+}
+
+.volume-container {
+    font-size: 11px;
+    color: #aaa;
+}
+
+/* Crystal Ball / Fortune Teller */
+.fortune-content {
+    text-align: center;
+}
+
+.fortune-input-group {
+    display: flex;
+    gap: 8px;
+    margin: 10px 0;
+}
+
+.fortune-input-group input {
+    flex-grow: 1;
+    padding: 6px;
+    border: 1px solid var(--box-border);
+    font-size: 12px;
+}
+
+.magic-btn {
+    background: linear-gradient(180deg, #9c27b0, #4a148c);
+    color: #fff;
+    border: 1px solid #fff;
+    padding: 6px 12px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.3);
+}
+
+.magic-btn:hover {
+    transform: scale(1.03);
+    background: linear-gradient(180deg, #e91e63, #880e4f);
+}
+
+.crystal-ball-display {
+    margin: 15px auto;
+    width: 140px;
+    height: 140px;
+}
+
+.ball-sphere {
+    width: 140px;
+    height: 140px;
+    border-radius: 50%;
+    background: radial-gradient(circle at 40px 40px, #ffffff, #8e24aa, #311b92, #000000);
+    box-shadow: 0 0 25px #ab47bc, inset 0 0 15px #ffffff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    font-weight: bold;
+    padding: 15px;
+    text-shadow: 0 0 5px #000;
+    font-size: 12px;
+    cursor: pointer;
+    transition: transform 0.3s;
+}
+
+.ball-sphere:hover {
+    transform: scale(1.08);
+}
+
+.fortune-result-box {
+    background: rgba(0,0,0,0.05);
+    border: 1px dashed var(--box-border);
+    padding: 10px;
+    font-size: 14px;
+    font-weight: bold;
+    min-height: 40px;
+    color: var(--link-color);
+}
+
+/* Soundboard Grid */
+.soundboard-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px;
+}
+
+.sound-btn {
+    background: var(--box-bg);
+    border: 2px solid var(--box-border);
+    padding: 8px;
+    font-size: 12px;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 4px;
+    text-align: left;
+    transition: all 0.15s;
+}
+
+.sound-btn:hover {
+    background: var(--box-header-bg);
+    color: #fff;
+    transform: translateY(-2px);
+}
+
+/* Bio Box */
+.highlight-text {
+    font-size: 14px;
+    font-weight: bold;
+    color: var(--link-color);
+    margin-bottom: 8px;
+}
+
+.bio-box p {
+    margin-bottom: 8px;
+}
+
+/* Friends Grid */
+.friends-sub {
+    margin-bottom: 10px;
+    font-size: 12px;
+}
+
+.friends-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 10px;
+}
+
+.friend-card {
+    border: 1px solid var(--box-border);
+    padding: 6px;
+    background: rgba(255,255,255,0.7);
+    text-align: center;
+    border-radius: 4px;
+}
+
+.friend-name {
+    display: block;
+    font-weight: bold;
+    font-size: 11px;
+    color: var(--link-color);
+    margin-bottom: 4px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.friend-img {
+    width: 65px;
+    height: 65px;
+    border: 1px solid #000;
+    margin: 0 auto 4px auto;
+    display: block;
+    background: #fff;
+}
+
+.friend-quote {
+    display: block;
+    font-size: 10px;
+    font-style: italic;
+    color: #555;
+}
+
+/* Comments Section */
+.add-comment-form {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    margin-bottom: 15px;
+    background: rgba(0,0,0,0.03);
+    padding: 10px;
+    border: 1px solid var(--box-border);
+    border-radius: 4px;
+}
+
+.add-comment-form input, .add-comment-form textarea {
+    padding: 6px;
+    border: 1px solid var(--box-border);
+    font-size: 12px;
+    font-family: inherit;
+}
+
+.submit-comment-btn {
+    align-self: flex-end;
+    padding: 6px 12px;
+    background: var(--box-header-bg);
+    color: #fff;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    border-radius: 3px;
+}
+
+.submit-comment-btn:hover {
+    opacity: 0.9;
+}
+
+.comments-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.comment-item {
+    display: flex;
+    gap: 10px;
+    padding: 8px;
+    background: rgba(255,255,255,0.8);
+    border: 1px solid var(--box-border);
+    border-radius: 4px;
+}
+
+.comment-avatar img {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #000;
+    background: #fff;
+}
+
+.comment-body {
+    flex-grow: 1;
+}
+
+.comment-meta {
+    font-size: 11px;
+    color: #666;
+    margin-bottom: 4px;
+    border-bottom: 1px dotted #ccc;
+    padding-bottom: 2px;
+}
+
+.comment-text {
+    font-size: 12px;
+    line-height: 1.3;
+}
+
+/* Footer */
+.myspace-footer {
+    max-width: 980px;
+    margin: 20px auto 0 auto;
+    text-align: center;
+    font-size: 11px;
+    color: #666;
+    border-top: 1px solid #ccc;
+    padding-top: 10px;
+}
+
+/* Floating Beer Emoji Effect */
+.floating-beer {
+    position: fixed;
+    font-size: 24px;
+    pointer-events: none;
+    animation: floatUp 1.5s forwards ease-out;
+    z-index: 9999;
+}
+
+@keyframes floatUp {
+    0% { transform: translateY(0) scale(1); opacity: 1; }
+    100% { transform: translateY(-80px) scale(1.5); opacity: 0; }
+}
+
+/* Glitter Particles */
+.glitter-particle {
+    position: fixed;
+    width: 6px;
+    height: 6px;
+    background: #fff;
+    border-radius: 50%;
+    pointer-events: none;
+    animation: sparkle 1s forwards ease-out;
+    z-index: 9999;
+}
+
+@keyframes sparkle {
+    0% { transform: scale(0) rotate(0deg); opacity: 1; box-shadow: 0 0 10px #ff00ff; }
+    50% { transform: scale(1.5) rotate(180deg); opacity: 0.8; box-shadow: 0 0 15px #00ffff; }
+    100% { transform: scale(0) rotate(360deg); opacity: 0; }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .container {
+        flex-direction: column;
+    }
+    .left-col {
+        width: 100%;
+    }
+    .friends-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
