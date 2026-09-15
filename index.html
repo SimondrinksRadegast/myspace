@@ -3,271 +3,290 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Jolanda_Official_2005 :: MySpace.com/jolanda_magie</title>
+  <title>CS2 Tactical Casino & Lootboxes | Global Elite Drops</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Teko:wght@500;600;700&family=Rajdhani:wght@500;600;700&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div id="top-banner">
-    <div class="banner-inner">
-      <span class="logo-myspace">MySpace.com</span>
-      <input type="text" placeholder="Hledat memy, trolle, lidé..." class="search-input" />
-      <button class="search-btn">Hledat</button>
-      <div class="top-nav-links">
-        <a href="#home" onclick="alert('Vítej na domovské stránce roku 2005!')">Domů</a> |
-        <a href="#browse" onclick="alert('Prohlížíš si české internetové legendy...')">Procházet</a> |
-        <a href="#search" onclick="alert('Vidím hodně výsledků!')">Hledat</a> |
-        <a href="#invite" onclick="alert('Pozvánka odeslána do roku 2005!')">Pozvat přátele</a> |
-        <a href="#film" onclick="alert('Filmy: Svatba Jiřího Káry')">Filmy</a> |
-        <a href="#music" onclick="alert('Hudba: Hitparáda Babicovy Dobroty')">Hudba</a>
+
+  <!-- TOP CS TACTICAL NAVBAR -->
+  <header class="cs-navbar">
+    <div class="nav-container">
+      <div class="brand">
+        <span class="cs-logo-icon">🎯</span>
+        <div class="brand-text">
+          <span class="brand-title">COUNTER-STRIKE</span>
+          <span class="brand-sub">CASINO & LOOTBOX DROP ZONE</span>
+        </div>
+      </div>
+
+      <div class="player-hud">
+        <div class="hud-item rank-item">
+          <span class="rank-badge">⚡ GLOBAL ELITE</span>
+          <span class="hud-label">Hráčský Rank</span>
+        </div>
+        <div class="hud-item balance-item">
+          <span class="coin-icon">🪙</span>
+          <span id="player-balance" class="balance-amount">1,000</span>
+          <span class="hud-label">CS Coins</span>
+        </div>
+        <button id="btn-daily-bonus" class="cs-btn cs-btn-gold">
+          🎁 +500 Mincí Zdarma
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- NAVIGATION TABS -->
+  <nav class="cs-tabs">
+    <div class="tabs-container">
+      <button class="tab-btn active" data-tab="lootboxes">
+        <span class="tab-icon">📦</span> LOOTBOXES (BEDNY)
+      </button>
+      <button class="tab-btn" data-tab="slots">
+        <span class="tab-icon">🎰</span> HERNÍ AUTOMAT (SLOTS)
+      </button>
+      <button class="tab-btn" data-tab="inventory">
+        <span class="tab-icon">🎒</span> INVENTÁŘ (<span id="inv-count">0</span>)
+      </button>
+    </div>
+  </nav>
+
+  <!-- MAIN CONTENT CONTAINER -->
+  <main class="cs-main">
+
+    <!-- TAB 1: LOOTBOXES (CASE OPENING) -->
+    <section id="tab-lootboxes" class="tab-content active">
+      <div class="section-header">
+        <h2>CS:GO & CS2 CASE OPENING</h2>
+        <p>Vyber si bednu, otevři lootbox a získej ikonické skiny včetně vzácných nožů a rukavic!</p>
+      </div>
+
+      <!-- CASE SELECTOR GRID -->
+      <div class="case-selection-grid">
+        <div class="case-card active" data-case="bravo" data-price="250">
+          <div class="case-badge">LEGENDÁRNÍ</div>
+          <div class="case-img-wrap">
+            <span class="case-icon">📦</span>
+          </div>
+          <div class="case-info">
+            <h3>Operation Bravo Case</h3>
+            <span class="case-price">🪙 250 Coins</span>
+          </div>
+        </div>
+
+        <div class="case-card" data-case="cobblestone" data-price="500">
+          <div class="case-badge gold">SOUVENIR</div>
+          <div class="case-img-wrap">
+            <span class="case-icon">🧰</span>
+          </div>
+          <div class="case-info">
+            <h3>Cobblestone Souvenir</h3>
+            <span class="case-price">🪙 500 Coins</span>
+          </div>
+        </div>
+
+        <div class="case-card" data-case="revolution" data-price="150">
+          <div class="case-badge blue">NOVINKA</div>
+          <div class="case-img-wrap">
+            <span class="case-icon">📦</span>
+          </div>
+          <div class="case-info">
+            <h3>Revolution Case</h3>
+            <span class="case-price">🪙 150 Coins</span>
+          </div>
+        </div>
+
+        <div class="case-card" data-case="knife" data-price="1000">
+          <div class="case-badge red">KNIFE & GLOVES ONLY</div>
+          <div class="case-img-wrap">
+            <span class="case-icon">🗡️</span>
+          </div>
+          <div class="case-info">
+            <h3>Specialist Knife Case</h3>
+            <span class="case-price">🪙 1,000 Coins</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- CASE OPENER SPINNER AREA -->
+      <div class="case-opener-wrapper">
+        <div class="spinner-viewport">
+          <div class="spinner-pointer"></div>
+          <div class="spinner-track" id="spinner-track">
+            <!-- Items populated by JavaScript -->
+          </div>
+        </div>
+
+        <div class="spinner-actions">
+          <button id="btn-open-case" class="cs-btn cs-btn-open">
+            🔓 OTEVŘÍT BEDNU (<span id="selected-case-price">250</span> Coins)
+          </button>
+        </div>
+      </div>
+
+      <!-- CASE POSSIBLE DROPS PREVIEW -->
+      <div class="case-contents-container">
+        <h3 class="subsection-title">MOŽNÉ DROPY ZE ZVOLENÉ BEDNY</h3>
+        <div class="drops-grid" id="case-drops-preview">
+          <!-- Populated dynamically -->
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 2: HERNÍ AUTOMATY (SLOT MACHINE) -->
+    <section id="tab-slots" class="tab-content">
+      <div class="section-header">
+        <h2>CS TACTICAL SLOT MACHINE</h2>
+        <p>Vytoč 3 stejné Counter-Strike symboly a získej obří jackpoti a násobiče!</p>
+      </div>
+
+      <div class="slot-machine-wrapper">
+        <div class="slot-machine-header">
+          <div class="jackpot-banner">
+            <span>MEGA JACKPOT</span>
+            <div id="jackpot-amount" class="jackpot-digits">🪙 50,000</div>
+          </div>
+        </div>
+
+        <!-- REELS VIEWPORT -->
+        <div class="reels-container">
+          <div class="payline-indicator"></div>
+          <div class="reel" id="reel-1">
+            <div class="reel-strip">
+              <div class="slot-symbol">🐉</div>
+              <div class="slot-symbol">🔪</div>
+              <div class="slot-symbol">💣</div>
+            </div>
+          </div>
+          <div class="reel" id="reel-2">
+            <div class="reel-strip">
+              <div class="slot-symbol">🔪</div>
+              <div class="slot-symbol">💣</div>
+              <div class="slot-symbol">🎯</div>
+            </div>
+          </div>
+          <div class="reel" id="reel-3">
+            <div class="reel-strip">
+              <div class="slot-symbol">💣</div>
+              <div class="slot-symbol">🎯</div>
+              <div class="slot-symbol">⚡</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- SLOT DISPLAY & CONTROLS -->
+        <div class="slot-controls">
+          <div class="bet-control-group">
+            <label>TVÁ SÁZKA:</label>
+            <div class="bet-buttons">
+              <button class="bet-btn active" data-bet="10">10</button>
+              <button class="bet-btn" data-bet="50">50</button>
+              <button class="bet-btn" data-bet="100">100</button>
+              <button class="bet-btn" data-bet="500">500</button>
+              <button class="bet-btn" data-bet="max">MAX</button>
+            </div>
+          </div>
+
+          <div class="slot-action-group">
+            <div class="slot-result-box" id="slot-result-msg">
+              Připraven k zatočení! Zvol sázku a stiskni ZATOČIT.
+            </div>
+            <button id="btn-spin-slots" class="cs-btn cs-btn-spin">
+              🎰 ZATOČIT (Sázka: <span id="current-bet-display">10</span> Coins)
+            </button>
+          </div>
+        </div>
+
+        <!-- PAYOUT TABLE -->
+        <div class="payout-table-box">
+          <h3>VÝHERNÍ KOMBINACE & NÁSOBIČE</h3>
+          <div class="payout-grid">
+            <div class="payout-item">
+              <span class="payout-syms">🐉 🐉 🐉</span>
+              <span class="payout-name">AWP Dragon Lore</span>
+              <span class="payout-mult">50x Sázka</span>
+            </div>
+            <div class="payout-item">
+              <span class="payout-syms">🔪 🔪 🔪</span>
+              <span class="payout-name">Karambit Doppler</span>
+              <span class="payout-mult">30x Sázka</span>
+            </div>
+            <div class="payout-item">
+              <span class="payout-syms">💣 💣 💣</span>
+              <span class="payout-name">C4 Bomb Explode</span>
+              <span class="payout-mult">20x Sázka</span>
+            </div>
+            <div class="payout-item">
+              <span class="payout-syms">✂️ ✂️ ✂️</span>
+              <span class="payout-name">Defuse Kit</span>
+              <span class="payout-mult">15x Sázka</span>
+            </div>
+            <div class="payout-item">
+              <span class="payout-syms">🎯 🎯 🎯</span>
+              <span class="payout-name">Headshot AK-47</span>
+              <span class="payout-mult">10x Sázka</span>
+            </div>
+            <div class="payout-item">
+              <span class="payout-syms">⭐ 2 Stejné</span>
+              <span class="payout-name">Dvojitý zásah</span>
+              <span class="payout-mult">2x Sázka</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TAB 3: INVENTÁŘ (INVENTORY) -->
+    <section id="tab-inventory" class="tab-content">
+      <div class="section-header inventory-header">
+        <div>
+          <h2>TVŮJ CS INVENTÁŘ</h2>
+          <p>Správa všech tvých získaných zbraní, nožů a rukavic.</p>
+        </div>
+        <div class="inventory-stats">
+          <span>Celková hodnota inventáře: <strong id="inv-total-value">0 Coins</strong></span>
+          <button id="btn-sell-all" class="cs-btn cs-btn-danger">💰 PRODAT VŠECHNO</button>
+        </div>
+      </div>
+
+      <div class="inventory-grid" id="inventory-grid">
+        <!-- Inventory cards populated by JS -->
+      </div>
+      <div id="empty-inventory-msg" class="empty-inv">
+        🎒 Tvůj inventář je zatím prázdný. Jdi otevřít nějakou bednu!
+      </div>
+    </section>
+
+  </main>
+
+  <!-- DROP / UNBOX MODAL -->
+  <div id="drop-modal" class="modal-backdrop hidden">
+    <div class="modal-card">
+      <div class="modal-header">
+        <h2>🎉 VYDROPOVÁNO!</h2>
+      </div>
+      <div class="modal-body">
+        <div id="modal-item-rarity-badge" class="rarity-badge">COVERT</div>
+        <div id="modal-item-icon" class="modal-item-icon">🐉</div>
+        <h3 id="modal-item-name" class="modal-item-title">AWP | Dragon Lore</h3>
+        <p id="modal-item-wear" class="modal-item-sub">Factory New • StatTrak™</p>
+        <div class="modal-item-value">
+          Hodnota: <span id="modal-item-price" class="value-highlight">🪙 5,000</span> Coins
+        </div>
+      </div>
+      <div class="modal-footer">
+        <button id="btn-modal-keep" class="cs-btn cs-btn-success">🎒 ULOŽIT DO INVENTÁŘE</button>
+        <button id="btn-modal-sell" class="cs-btn cs-btn-gold">💰 IHNED PRODAT NA MINCE</button>
       </div>
     </div>
   </div>
 
-  <div class="marquee-container">
-    <marquee behavior="scroll" direction="left" scrollamount="5">
-      🔥 ✨ VÍTÁ TĚ OFICIÁLNÍ MYSPACE JOLANDY A ČESKÝCH MEME LEGEND! ✨ 🔥 "Hodně budeš jinde!" -- "Ty internety bych zakázala!" -- "Když nemáte limetky, dejte tam citrón!" -- "Vidím velký špatný!"
-    </marquee>
-  </div>
-
-  <div class="container">
-    <!-- HEADER -->
-    <header class="profile-header">
-      <div class="header-title">
-        <h1>✨ Jolanda (Bílá Magie & Meme Troll 2005) ✨</h1>
-        <p class="headline">"Vidím velký špatný... ale na mým MySpace jsi v bezpečí!"</p>
-      </div>
-      <div class="header-badges">
-        <span class="online-now">🟢 ONLINE HNED!</span>
-        <span class="status-quote" id="live-status">Status: "Prostě sem hodně někde!"</span>
-        <button id="change-status-btn">Změnit status 💬</button>
-      </div>
-    </header>
-
-    <div class="main-layout">
-      <!-- LEFT COLUMN -->
-      <aside class="left-col">
-        <!-- PROFILE CARD -->
-        <div class="box profile-pic-box">
-          <h2>Jolanda</h2>
-          <div class="profile-pic-container">
-            <img id="profile-img" src="https://picsum.photos/id/1025/250/250" alt="Jolanda Profil" />
-            <div class="avatar-controls">
-              <button onclick="changeProfileAvatar()">Změnit fotku 📷</button>
-            </div>
-          </div>
-          <p class="profile-details">
-            "Karty nikdy nelžou!"<br>
-            Žena, 54 let<br>
-            Děčín / Praha, Česká Republika<br>
-            <br>
-            <strong>Naposledy přihlášen:</strong> <span id="last-login">DNES 13:37</span><br>
-            <strong>Zobrazení profilu:</strong> <span id="view-counter">133,742</span>
-          </p>
-
-          <!-- CONTACT BOX -->
-          <div class="box contact-box">
-            <h3>Kontaktovat Jolandu</h3>
-            <div class="contact-buttons">
-              <button onclick="triggerAction('Poslat zprávu', 'Zpráva odeslána přes holuba z roku 2005!')">✉️ Poslat zprávu</button>
-              <button onclick="triggerAction('Přidat do přátel', 'Požadavek odeslán! Jolanda se podívá do karet.')">➕ Přidat do přátel</button>
-              <button onclick="triggerAction('Přidat do oblíbených', 'Přidáno do tvých TOP 2005 záložek!')">⭐ Přidat do oblíbených</button>
-              <button onclick="triggerAction('Blokovat uživatele', 'Nelze zablokovat bílou magii!')">🚫 Blokovat</button>
-            </div>
-          </div>
-
-          <!-- INTERESTS -->
-          <div class="box interests-box">
-            <h3>Jolandiny zájmy & Memy</h3>
-            <table class="retro-table">
-              <tr>
-                <td class="label">Obecné:</td>
-                <td>Bílá magie, vykládání karet, věštění z kávové sedliny, vytáčení do TV vysílání</td>
-              </tr>
-              <tr>
-                <td class="label">Oblíbené memy:</td>
-                <td>Věra Pohlová, Jiří Kára, Zdeněk Babica, Ladislav Hruška, Jolanda remixy</td>
-              </tr>
-              <tr>
-                <td class="label">Hudba:</td>
-                <td>Nightwork - Tepláky, Disco z 80s, Soundboard Hlášky, Eurodance 2005</td>
-              </tr>
-              <tr>
-                <td class="label">Hlášky:</td>
-                <td>"Velký špatný", "Hodně budeš někde", "Internety zakázat", "Citrón místo limetky"</td>
-              </tr>
-            </table>
-          </div>
-
-          <!-- RETRO COUNTER & BADGES -->
-          <div class="box badges-box">
-            <h3>Retro Badges 2005</h3>
-            <div class="badge-list">
-              <span class="badge red">BEST MYSPACE 2005</span>
-              <span class="badge blue">HTML MASTER 100%</span>
-              <span class="badge green">CZECH TROLL APPROVED</span>
-              <span class="badge yellow">NO SPAM 🛡️</span>
-            </div>
-          </div>
-        </div>
-      </aside>
-
-      <!-- RIGHT COLUMN -->
-      <main class="right-col">
-
-        <!-- INTERACTIVE MUSIC PLAYER -->
-        <div class="box music-player-box">
-          <h2>🎵 MySpace 2005 MP3 Player :: Czech Meme Hits</h2>
-          <div class="player-content">
-            <div class="now-playing-info">
-              <span>Hraje: </span><strong id="song-title">Jolanda - Velký Špatný (Retro Techno Remix 2005)</strong>
-            </div>
-            <div class="player-controls">
-              <button id="btn-play">▶️ Play</button>
-              <button id="btn-pause">⏸️ Pause</button>
-              <button id="btn-stop">⏹️ Stop</button>
-              <button id="btn-next">⏭️ Další hit</button>
-            </div>
-            <div class="sound-visualizer" id="visualizer">
-              <div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div><div class="bar"></div>
-            </div>
-            <div class="playlist">
-              <label>Vyber skladbu:</label>
-              <select id="playlist-select">
-                <option value="jolanda">Jolanda - Velký Špatný (Remix)</option>
-                <option value="kara">Jiří Kára - Pivo & Oltář Anthem</option>
-                <option value="pohlova">Věra Pohlová - Internety Zakázat (Synthwave)</option>
-                <option value="babica">Babica - Když Nemáte Limetky (8-Bit Beat)</option>
-              </select>
-            </div>
-          </div>
-        </div>
-
-        <!-- CZECH MEME SOUNDBOARD -->
-        <div class="box soundboard-box">
-          <h2>🔊 Český Meme Troll Soundboard (Stiskni a poslouchej!)</h2>
-          <p class="box-subtitle">Interaktivní zvukový panel legendárních českých hlášek roku 2005!</p>
-          <div class="sound-grid">
-            <button class="sound-btn" onclick="playSound('velkyspatny')">🗣️ "Velký špatný!" (Jolanda)</button>
-            <button class="sound-btn" onclick="playSound('hodnebudes')">🔮 "Hodně budeš někde!" (Jolanda)</button>
-            <button class="sound-btn" onclick="playSound('pohlova')">💻 "Ty internety bych zakázala!" (Věra)</button>
-            <button class="sound-btn" onclick="playSound('kara')">🍺 "Kde je to pivo?!" (Jiří Kára)</button>
-            <button class="sound-btn" onclick="playSound('babica')">🍋 "Dejte tam citrón!" (Babica)</button>
-            <button class="sound-btn" onclick="playSound('hruska')">🧀 "Kůžičky z kuřete!" (Láďa Hruška)</button>
-            <button class="sound-btn" onclick="playSound('matus')">🎤 "To je málo milostné..." (Bohuš)</button>
-            <button class="sound-btn" onclick="playSound('troll')">🤡 "Už jste v pasti!" (Troll Mode)</button>
-          </div>
-          <div id="sound-status" class="sound-status-msg">Připraveno k přehrání hlášky.</div>
-        </div>
-
-        <!-- ABOUT ME / BLURBS -->
-        <div class="box blurbs-box">
-          <h2>Jolandino vyprávění & O mně</h2>
-          <div class="blurb-item">
-            <h3>Kdo jsem?</h3>
-            <p>Jsem oficiální kartářka české internetové scény! Můj MySpace je zóna čisté energie, kde Jiří Kára pije pivo, Věra Pohlová bojuje proti internetu a Babica vaří bez surovin. Jestli chceš vědět svou budoucnost, stiskni tlačítko níže!</p>
-            <button id="fortune-btn" class="action-btn">🔮 Vyveštit budoucnost z karet!</button>
-            <div id="fortune-result" class="fortune-output"></div>
-          </div>
-          <div class="blurb-item">
-            <h3>Koho chci potkat?</h3>
-            <p>Lidi, co rozumí pořádnýmu humoru, neberou internety vážně, pamatují si ICQ, Líbímsetě.cz, Lidé.cz a nevěří na velký špatný!</p>
-          </div>
-        </div>
-
-        <!-- TOP 8 FRIENDS -->
-        <div class="box top8-box">
-          <h2>Jolandina TOP 8 Přátel (České Internetové Legendy)</h2>
-          <p class="box-subtitle">Jolanda má 1,337 přátel. Zde je její elitní osmička:</p>
-          <div class="top8-grid">
-            <div class="friend-card" onclick="showFriendInfo('Věra Pohlová', 'Odbornice na zakazování internetu a počítačových sítí.', 'https://picsum.photos/id/1062/100/100')">
-              <span class="friend-name">Věra Pohlová</span>
-              <img src="https://picsum.photos/id/1062/100/100" alt="Věra Pohlová" />
-              <span class="friend-quote">"Internety zakázat!"</span>
-            </div>
-            <div class="friend-card" onclick="showFriendInfo('Jiří Kára', 'Žijící legenda české svatební kinematografie a znalec piva.', 'https://picsum.photos/id/1005/100/100')">
-              <span class="friend-name">Jiří Kára</span>
-              <img src="https://picsum.photos/id/1005/100/100" alt="Jiří Kára" />
-              <span class="friend-quote">"Kde je pivo?"</span>
-            </div>
-            <div class="friend-card" onclick="showFriendInfo('Zdeněk Babica', 'Mistr improvizační gastronomie. Když nemáš nic, dej tam cokoli.', 'https://picsum.photos/id/1027/100/100')">
-              <span class="friend-name">Zdeněk Babica</span>
-              <img src="https://picsum.photos/id/1027/100/100" alt="Zdeněk Babica" />
-              <span class="friend-quote">"Dej tam citrón!"</span>
-            </div>
-            <div class="friend-card" onclick="showFriendInfo('Láďa Hruška', 'Kuchař levně a rychle. Kůžičky, nadívané šlupky a domácky chleba.', 'https://picsum.photos/id/1074/100/100')">
-              <span class="friend-name">Láďa Hruška</span>
-              <img src="https://picsum.photos/id/1074/100/100" alt="Láďa Hruška" />
-              <span class="friend-quote">"Mňam dopíči!"</span>
-            </div>
-            <div class="friend-card" onclick="showFriendInfo('Bohuš Matuš', 'Zpěvák a lovec milostných melodií.', 'https://picsum.photos/id/1012/100/100')">
-              <span class="friend-name">Bohuš Matuš</span>
-              <img src="https://picsum.photos/id/1012/100/100" alt="Bohuš Matuš" />
-              <span class="friend-quote">"Málo milostné..."</span>
-            </div>
-            <div class="friend-card" onclick="showFriendInfo('Ivan Jonák', 'Majitel Discolandu Sylvie a milovník exotična.', 'https://picsum.photos/id/1011/100/100')">
-              <span class="friend-name">Ivan Jonák</span>
-              <img src="https://picsum.photos/id/1011/100/100" alt="Ivan Jonák" />
-              <span class="friend-quote">"Discoland 2005"</span>
-            </div>
-            <div class="friend-card" onclick="showFriendInfo('Kazma Kazmitch', 'Mladý internetový troll začínající své první mystifikace.', 'https://picsum.photos/id/1003/100/100')">
-              <span class="friend-name">Kazma</span>
-              <img src="https://picsum.photos/id/1003/100/100" alt="Kazma" />
-              <span class="friend-quote">"OMS 2005"</span>
-            </div>
-            <div class="friend-card" onclick="showFriendInfo('Tomáš Holý / Žito', 'Mystik, kouzelník a národní hrdina v zácviku.', 'https://picsum.photos/id/1024/100/100')">
-              <span class="friend-name">Kouzelník Žito</span>
-              <img src="https://picsum.photos/id/1024/100/100" alt="Kouzelník Žito" />
-              <span class="friend-quote">"Bílá magie!"</span>
-            </div>
-          </div>
-        </div>
-
-        <!-- INTERACTIVE GUESTBOOK / COMMENTS -->
-        <div class="box comments-box">
-          <h2>💬 Návštěvní kniha & Vzkazy (Guestbook MySpace)</h2>
-          <div class="add-comment-form">
-            <h3>Napiš Jolandě vzkaz na zeď:</h3>
-            <div class="form-row">
-              <input type="text" id="comment-author" placeholder="Tvoje přezdívka (např. Pařmen2005)" />
-              <select id="comment-avatar">
-                <option value="🔮">🔮 Magická koule</option>
-                <option value="🍺">🍺 Pivo Kára</option>
-                <option value="💻">💻 Zakázat Internet</option>
-                <option value="🍋">🍋 Citrón Babica</option>
-                <option value="😎">😎 Hustej Troll</option>
-              </select>
-            </div>
-            <div class="form-row">
-              <textarea id="comment-text" rows="3" placeholder="Napiš co tě trápí nebo zanech pozdrav z roku 2005..."></textarea>
-            </div>
-            <button id="submit-comment-btn" class="action-btn">✉️ Odeslat Vzkaz na Zeď!</button>
-          </div>
-
-          <div class="comments-list" id="comments-list">
-            <!-- Default comments will be injected by JavaScript -->
-          </div>
-        </div>
-
-      </main>
-    </div>
-
-    <!-- FOOTER -->
-    <footer class="profile-footer">
-      <p>&copy; 2005 MySpace.com Inc. Všechna práva vyhrazena českému internetovému undergroundu.</p>
-      <p>Vytvořeno s láskou k retro českým memům | ICQ Status: 🔴 Nerušit (Vykládám karty)</p>
-    </footer>
-  </div>
-
-  <!-- MODAL FOR FRIEND DETAILS -->
-  <div id="friend-modal" class="modal hidden">
-    <div class="modal-content">
-      <span class="close-modal" onclick="closeModal()">&times;</span>
-      <h2 id="modal-friend-name">Jméno přátele</h2>
-      <img id="modal-friend-img" src="" alt="Přítel" />
-      <p id="modal-friend-desc">Popis přátele...</p>
-      <button onclick="alert('Poslal jsi šťouchneutí (poke)!')">👉 Šťouchnout (Poke)</button>
-    </div>
-  </div>
+  <footer class="cs-footer">
+    <p>&copy; Counter-Strike Tactical Casino & Lootboxes. Všechny zvuky a animace jsou určené pro zábavu.</p>
+  </footer>
 
   <script src="script.js"></script>
 </body>
